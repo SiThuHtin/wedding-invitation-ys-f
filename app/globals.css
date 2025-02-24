@@ -1,3 +1,12 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +14,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-pacifico: 'Pacifico', cursive;
+  --font-parisienne: 'Parisienne', cursive;
+  --font-satisfy: 'Satisfy', cursive;
+  --font-playfair: 'Playfair Display',sans-serif;
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,5 +31,20 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
+
+main{
+  background-color: #ffffff;
+}
+
+.hero-text{
+  font-family: "Great Vibes" !important;
+  font-weight: 400;
+  font-style: normal;
+}
+.bg-photo{
+  background-image: url('../public/jumping.jpeg');
+
+}
+
