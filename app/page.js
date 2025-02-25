@@ -10,6 +10,12 @@ import ColorPalette from "./components/colorpalette";
 import FormSection from "./components/formsection";
 import Attending from "../public/attending.jpeg";
 import { motion } from "framer-motion";
+import WeddingSection from "./components/letter";
+
+
+
+
+
 export default function Home() {
   return (
     <main class="bg-white">
@@ -41,9 +47,8 @@ export default function Home() {
       <div class="h-screen w-full flex items-center justify-center bg-[#F5D9B1]">
         <div class="max-w-5xl w-full flex flex-col md:flex-row justify-between p-12">
           <div class="md:w-1/2">
-            <h1 class="text-6xl font-serif font-bold text-[#3F4A37] leading-tight">
-              SCHEDULE <br />
-              <i class="italic">of</i> EVENTS
+            <h1 class="text-4xl md:text-6xl font-serif font-bold text-[#3F4A37] leading-tight">
+              Wedding Celebration Details
             </h1>
             <p class="text-lg text-[#3F4A37] mt-4">March 05, 2025</p>
           </div>
@@ -56,7 +61,7 @@ export default function Home() {
               <span>6:6 PM</span> <span>BEER TIME</span>
             </div>
             <div class="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
-              <span>6:45 PM</span> <span>WELCOME NEWLY WEDDING</span>
+              <span>6:45 PM</span> <span>WELCOME NEWLYWEDS</span>
             </div>
             <div class="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
               <span>7:30 PM</span> <span>DINNER</span>
@@ -191,6 +196,7 @@ export default function Home() {
 
 
       <FormSection />
+      <WeddingSection />
     
     </main>
   );
