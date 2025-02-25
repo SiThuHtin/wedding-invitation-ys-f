@@ -18,15 +18,15 @@ import WeddingSection from "./components/letter";
 
 export default function Home() {
   return (
-    <main class="bg-white">
+    <main className="bg-white">
       {/* Herosection */}
-      <div class="h-screen w-full flex">
-        <div class="w-1/2 flex flex-col justify-center items-center bg-white p-12">
-          <div class="text-5xl font-satisfy pb-12 text-yellow-700">
+      <div className="h-screen w-full flex">
+        <div className="w-1/2 flex flex-col justify-center items-center bg-white p-12">
+          <div className="text-5xl font-satisfy pb-12 text-yellow-700">
             Shun & Ye's Wedding
           </div>
 
-          <p class="text-xl italic text-yellow-900 mt-2">
+          <p className="text-xl italic text-yellow-900 mt-2">
             "A Great Marriage is not when the perfect couple comes together.
             <br />
             It is when an imperfect couple learns to enjoy their differences"
@@ -34,36 +34,36 @@ export default function Home() {
           <div className="py-3 font-light italic">-Dave Meurer</div>
         </div>
 
-        <div class="w-1/2 h-full">
+        <div className="w-1/2 h-full">
           <Image
             src={HeroImage}
             alt="Wedding Rings"
-            class="w-full h-full object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
       </div>
 
       {/* Wedding Events */}
-      <div class="h-screen w-full flex items-center justify-center bg-[#F5D9B1]">
-        <div class="max-w-5xl w-full flex flex-col md:flex-row justify-between p-12">
-          <div class="md:w-1/2">
-            <h1 class="text-4xl md:text-6xl font-serif font-bold text-[#3F4A37] leading-tight">
+      <div className="h-screen w-full flex items-center justify-center bg-[#F5D9B1]">
+        <div className="max-w-5xl w-full flex flex-col md:flex-row justify-between p-12">
+          <div className="md:w-1/2">
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#3F4A37] leading-tight">
               Wedding Celebration Details
             </h1>
-            <p class="text-lg text-[#3F4A37] mt-4">March 05, 2025</p>
+            <p className="text-lg text-[#3F4A37] mt-4">March 05, 2025</p>
           </div>
 
-          <div class="md:w-1/2 space-y-4 mt-6 md:mt-0">
-            <div class="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+          <div className="md:w-1/2 space-y-4 mt-6 md:mt-0">
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
               <span>5:30 PM</span> <span>SIGNING CEREMONY</span>
             </div>
-            <div class="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
               <span>6:6 PM</span> <span>BEER TIME</span>
             </div>
-            <div class="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
               <span>6:45 PM</span> <span>WELCOME NEWLYWEDS</span>
             </div>
-            <div class="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
               <span>7:30 PM</span> <span>DINNER</span>
             </div>
           </div>
@@ -71,10 +71,10 @@ export default function Home() {
       </div>
 
       {/* Formsection */}
-      {/* <div class="flex flex-col md:flex-row items-center justify-center min-h-screen bg-olive p-6">
-        <div class="md:w-1/2 text-center space-y-6 ">
+      {/* <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-olive p-6">
+        <div className="md:w-1/2 text-center space-y-6 ">
           <div className="text-left">
-            <p class="text-xl md:text-2xl font-serif  text-white">
+            <p className="text-xl md:text-2xl font-serif  text-white">
               Save the date! Shun & Ye are getting married on
               <br />
               <span className="text-yellow-600 italic font-light">
@@ -89,35 +89,35 @@ export default function Home() {
             </p>
           </div>
 
-          <div class="space-y-4 font-serif">
+          <div className="space-y-4 font-serif">
             <div>
-              <h2 class="text-lg font-semibold text-yellow-600 font-serif">
+              <h2 className="text-lg font-semibold text-yellow-600 font-serif">
                 DATE:
               </h2>
-              <p class="text-white font-serif">March 05, 2025 at 5:30 PM</p>
+              <p className="text-white font-serif">March 05, 2025 at 5:30 PM</p>
             </div>
 
             <div>
-              <h2 class="text-lg font-semibold text-yellow-600 font-serif">
+              <h2 className="text-lg font-semibold text-yellow-600 font-serif">
                 VENUE:
               </h2>
-              <p class="text-white font-serif">Golden Inya,Yangon</p>
+              <p className="text-white font-serif">Golden Inya,Yangon</p>
             </div>
 
             <div>
-              <h2 class="text-lg font-semibold text-yellow-600 font-serif">
+              <h2 className="text-lg font-semibold text-yellow-600 font-serif">
                 DRESS CODE & COLOR:
               </h2>
-              <p class="text-white font-serif">Formal</p>
+              <p className="text-white font-serif">Formal</p>
             </div>
           </div>
         </div>
 
-        <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+        <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
           <Image
             src={Contact}
             alt="Couple Photo"
-            class="w-72 md:w-96 rounded-lg shadow-md"
+            className="w-72 md:w-96 rounded-lg shadow-md"
           />
         </div>
       </div> */}
@@ -161,34 +161,34 @@ export default function Home() {
 
       {/* Gallery Section */}
       <div className="bg-[#F5D9B1] h-auto">
-        <div class="max-w-4xl mx-auto p-6 ">
-          <div class="grid grid-cols-3 gap-4">
+        <div className="max-w-4xl mx-auto p-6 ">
+          <div className="grid grid-cols-3 gap-4">
             <Image
               src={One}
               alt="Window Photo 1"
-              class=" col-span-1 h-64 object-cover rounded-lg shadow-md"
+              className=" col-span-1 h-64 object-cover rounded-lg shadow-md"
             />
             <Image
               src={Two}
               alt="Window Photo 2"
-              class="col-span-2 h-64 object-cover rounded-lg shadow-md"
+              className="col-span-2 h-64 object-cover rounded-lg shadow-md"
             />
           </div>
 
-          <h2 class="text-center text-2xl font-satisfy tracking-widest font-bold my-4">
+          <h2 className="text-center text-2xl font-satisfy tracking-widest font-bold my-4">
             Love is like a movie,a journey of heartbeats & timeless memories
           </h2>
 
-          <div class="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             <Image
               src={Four}
               alt="Tree Photo"
-              class="col-span-2 h-64 object-cover rounded-lg shadow-md"
+              className="col-span-2 h-64 object-cover rounded-lg shadow-md"
             />
             <Image
               src={Three}
               alt="Picnic Photo"
-              class="col-span-1 h-64 object-cover rounded-lg shadow-md"
+              className="col-span-1 h-64 object-cover rounded-lg shadow-md"
             />
           </div>
         </div>
