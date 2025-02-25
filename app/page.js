@@ -19,30 +19,30 @@ import WeddingSection from "./components/letter";
 export default function Home() {
   return (
     <main className="bg-white">
-      {/* Herosection */}
-      <div className="h-screen w-full flex">
-        <div className="w-1/2 flex flex-col justify-center items-center bg-white p-12">
-          <div className="text-5xl font-satisfy pb-12 text-yellow-700">
-            Shun & Ye's Wedding
-          </div>
+<div className="h-screen w-full flex flex-col md:flex-row overflow-hidden">
+  {/* Left Section - Text */}
+  <div className="w-full md:w-1/2 flex flex-col justify-center items-center bg-white p-6 md:p-12 overflow-y-auto">
+    <div className="text-3xl md:text-5xl font-satisfy pb-6 md:pb-12 text-yellow-700 text-center">
+      Shun & Ye's Wedding
+    </div>
 
-          <p className="text-xl italic text-yellow-900 mt-2">
-            "A Great Marriage is not when the perfect couple comes together.
-            <br />
-            It is when an imperfect couple learns to enjoy their differences"
-          </p>
-          <div className="py-3 font-light italic">-Dave Meurer</div>
-        </div>
+    <p className="text-base md:text-xl italic text-yellow-900 mt-2 text-center">
+      "A Great Marriage is not when the perfect couple comes together.
+      <br />
+      It is when an imperfect couple learns to enjoy their differences"
+    </p>
+    <div className="py-3 font-light italic text-center">-Dave Meurer</div>
+  </div>
 
-        <div className="w-1/2 h-full">
-          <Image
-            src={HeroImage}
-            alt="Wedding Rings"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-
+  {/* Right Section - Image */}
+  <div className="w-full md:w-1/2 h-[40vh] md:h-full flex-none">
+    <Image
+      src={HeroImage}
+      alt="Wedding Rings"
+      className="w-full h-full object-contain"
+    />
+  </div>
+</div>
       {/* Wedding Events */}
       <div className="h-screen w-full flex items-center justify-center bg-[#F5D9B1]">
         <div className="max-w-5xl w-full flex flex-col md:flex-row justify-between p-12">
