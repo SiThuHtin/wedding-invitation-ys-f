@@ -159,8 +159,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Gallery Section */}
-      <div className="bg-[#F5D9B1] h-auto">
+
+
+
+      <FormSection />
+            {/* Gallery Section */}
+            <div className="bg-[#F5D9B1] h-auto">
         <div className="max-w-4xl mx-auto p-6 ">
           <div className="grid grid-cols-3 gap-4">
             <Image
@@ -193,9 +197,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-
-      <FormSection />
       <WeddingSection />
     
     </main>

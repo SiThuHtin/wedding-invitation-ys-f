@@ -14,25 +14,20 @@ export default function RSVPSection() {
       return alert('Please provide your name and select Yes or No.');
     }
 
-    // Prepare the data to send in the email (this is what will replace the placeholders)
     const templateParams = {
-      name: name,     // This will replace {{name}} in the email template
-      response: response,  // This will replace {{response}} in the email template
+      name: name,
+      response: response,
     };
 
     try {
-      // Send the email using EmailJS
       const result = await emailjs.send(
         'service_hsk7dbl',  // Replace with your service ID from EmailJS
         'template_c8xjf0k', // Replace with your template ID from EmailJS
-        templateParams,     // Send the dynamic data (name and response) here
+        templateParams,
         'Yr5LLxycrBU7nirw6'   // Replace with your public key from EmailJS
       );
 
-      // Show success alert after sending the email
       alert('Email sent successfully!');
-
-      // Reset the form after submission
       setName('');
       setResponse(null);
     } catch (error) {
@@ -44,17 +39,17 @@ export default function RSVPSection() {
   return (
     <div className="h-screen w-full flex flex-col md:flex-row bg-[#F5F5DC]">
       {/* Image Section */}
-      <div className="md:w-1/2 w-full h-full">
+      <div className="md:w-1/2 w-full h-1/2 md:h-full bg-gray-200"> {/* Fallback background color */}
         <Image
           src={Attending}
           alt="Wedding Rings"
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain " // object-contain for mobile, object-cover for desktop
           priority
         />
       </div>
 
       {/* Form Section */}
-      <div className="md:w-1/2 w-full flex flex-col justify-center items-center p-4 md:p-12">
+      <div className="md:w-1/2 w-full flex flex-col justify-center items-center p-12 md:p-12">
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -65,7 +60,6 @@ export default function RSVPSection() {
             Will you be attending?
           </h1>
           <form
-            // Prevent the default form submission behavior
             onSubmit={(e) => e.preventDefault()}
             className="w-full"
           >
@@ -89,7 +83,7 @@ export default function RSVPSection() {
                     ? 'bg-green-500 shadow-lg text-white'
                     : 'bg-white bg-opacity-80 text-gray-900 hover:bg-opacity-100'
                 }`}
-                onClick={() => setResponse('Yes')} // Set the response to 'Yes'
+                onClick={() => setResponse('Yes')}
                 whileHover={{ scale: 1.1 }}
               >
                 Yes
@@ -101,19 +95,18 @@ export default function RSVPSection() {
                     ? 'bg-red-500 shadow-lg text-white'
                     : 'bg-white bg-opacity-80 text-gray-900 hover:bg-opacity-100'
                 }`}
-                onClick={() => setResponse('No')} // Set the response to 'No'
+                onClick={() => setResponse('No')}
                 whileHover={{ scale: 1.1 }}
               >
                 No
               </motion.button>
             </div>
 
-            {/* Submit button triggers the handleSubmit */}
             {response && (
               <motion.button
                 type="button"
-                onClick={handleSubmit} // Submit the form and send the email
-                className="px-8 py-4 bg-blue-600 text-white rounded-full font-semibold text-lg transition hover:bg-blue-700 shadow-md"
+                onClick={handleSubmit}
+                className="px-2 py-2 bg-blue-600 text-white  font-semibold text-lg transition hover:bg-blue-700 shadow-md"
                 whileHover={{ scale: 1.05 }}
               >
                 Submit
