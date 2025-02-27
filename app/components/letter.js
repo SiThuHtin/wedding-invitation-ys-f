@@ -16,7 +16,7 @@ const WeddingSection = ({ onSubmit }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen bg-[#F5F5DC]">
+    <div className="flex flex-col md:flex-row h-screen bg-[#ffffff]">
       {/* Upper photo section (50% on mobile, 50% width on desktop/tablet) */}
       <div className="h-1/2 md:h-full md:w-1/2 w-full overflow-hidden md:pl-9">
         <Image
@@ -28,7 +28,7 @@ const WeddingSection = ({ onSubmit }) => {
       </div>
 
       {/* Lower form section (50% on mobile, 50% width on desktop/tablet) */}
-      <div className="h-1/2 md:h-full md:w-1/2 w-full flex justify-center items-center bg-[#F5F5DC] p-4 md:p-6 font-satisfy">
+      <div className="h-1/2 md:h-full md:w-1/2 w-full flex justify-center items-center  p-4 md:p-6 font-satisfy">
         <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
           <textarea
             value={wish}
