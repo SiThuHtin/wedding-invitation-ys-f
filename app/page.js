@@ -55,16 +55,25 @@ export default function Home() {
 
           <div className="md:w-1/2 space-y-4 mt-6 md:mt-0">
             <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
-              <span>5:30 PM</span> <span>SIGNING CEREMONY</span>
+              <span>5:00 PM</span> <span>INVITE START TIME</span>
             </div>
             <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
-              <span>6:6 PM</span> <span>BEER TIME</span>
+              <span>5:30 PM</span> <span>SIGNING CEREMONY BEGINS</span>
             </div>
             <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
-              <span>6:45 PM</span> <span>WELCOME NEWLYWEDS</span>
+              <span>6:00 PM</span> <span>PINT O'CLOCK</span>
             </div>
             <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
-              <span>7:30 PM</span> <span>DINNER</span>
+              <span>6:45 PM</span> <span>WELCOME TO THE NEWLYWED</span>
+            </div>
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+              <span>7:30 PM</span> <span>BUFFET OPENS</span>
+            </div>
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+              <span>8:00 PM</span> <span>PARTY TIME</span>
+            </div>
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+              <span>9:00 PM</span> <span>RECEPTION ENDS</span>
             </div>
           </div>
         </div>
