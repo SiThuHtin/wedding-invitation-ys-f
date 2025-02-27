@@ -2,7 +2,7 @@
 
 const Weddingevents = () => {
     return (
-        <div className="h-screen w-full flex items-center justify-center bg-[#F5D9B1]">
+        <div className="min-h-screen w-full flex items-center justify-center bg-[#F5D9B1]">
             <div className="max-w-5xl w-full flex flex-col md:flex-row justify-between p-12">
                 <div className="md:w-1/2">
                     <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#3F4A37] leading-tight">

@@ -4,7 +4,7 @@ import HeroImage from "../../public/heroimage.jpg";
 
 const HeroSection = () => {
     return (
-        <div className="h-screen w-full flex flex-col md:flex-row overflow-hidden">
+        <div className="min-h-screen w-full flex flex-col md:flex-row overflow-hidden">
             {/* Left Section - Text */}
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center bg-white p-6 md:p-12 overflow-y-auto">
                 <div className="text-3xl md:text-5xl font-satisfy pb-6 md:pb-12 text-yellow-700 text-center">

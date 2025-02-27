@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Attending from '../../public/attending.jpeg'; // Replace with your actual image path
@@ -7,7 +7,26 @@ import Attending from '../../public/attending.jpeg'; // Replace with your actual
 export default function RSVPSection({ onRSVPSubmit }) {
   const [name, setName] = useState('');
   const [response, setResponse] = useState(null);
-  const [numberOfGuests, setNumberOfGuests] = useState(''); // Default to 1 guest
+  const [numberOfGuests, setNumberOfGuests] = useState(''); 
+  
+  useEffect(() => {
+    const handleFocus = (e) => {
+      setTimeout(() => {
+        e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    };
+
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach((input) => {
+      input.addEventListener('focus', handleFocus);
+    });
+
+    return () => {
+      inputs.forEach((input) => {
+        input.removeEventListener('focus', handleFocus);
+      });
+    };
+  }, []);// Default to 1 guest
 
   const handleSubmit = async () => {
     if (!response || !name) {
@@ -27,7 +46,7 @@ export default function RSVPSection({ onRSVPSubmit }) {
   };
 
   return (
-    <div className="h-screen w-full flex flex-col md:flex-row bg-[#F5F5DC]">
+    <div className="md:h-screen min-h-screen w-full flex flex-col md:flex-row bg-[#F5F5DC]">
       {/* Image Section */}
       <div className="md:w-1/2 w-full h-1/2 md:h-full bg-gray-200">
         <Image
@@ -39,7 +58,7 @@ export default function RSVPSection({ onRSVPSubmit }) {
       </div>
 
       {/* Form Section */}
-      <div className="md:w-1/2 w-full h-1/2 md:h-full flex flex-col justify-center items-center p-4">
+      <div className="md:w-1/2 w-full h-1/2 md:h-full  flex flex-col justify-center items-center p-4">
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -51,7 +70,7 @@ export default function RSVPSection({ onRSVPSubmit }) {
           </h1>
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="w-full space-y-4"
+            className="w-full space-y-4 flex-grow"
           >
             <motion.input
               type="text"
