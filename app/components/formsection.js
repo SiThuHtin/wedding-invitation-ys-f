@@ -3,37 +3,29 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Attending from '../../public/attending.jpeg'; // Replace with your actual image path
-import emailjs from 'emailjs-com';
 
-export default function RSVPSection() {
+export default function RSVPSection({ onRSVPSubmit }) {
   const [name, setName] = useState('');
   const [response, setResponse] = useState(null);
+  const [numberOfGuests, setNumberOfGuests] = useState(1); // Default to 1 guest
 
   const handleSubmit = async () => {
     if (!response || !name) {
       return alert('Please provide your name and select Yes or No.');
     }
 
-    const templateParams = {
-      name: name,
-      response: response,
-    };
-
-    try {
-      const result = await emailjs.send(
-        'service_hsk7dbl',  // Replace with your service ID from EmailJS
-        'template_c8xjf0k', // Replace with your template ID from EmailJS
-        templateParams,
-        'Yr5LLxycrBU7nirw6'   // Replace with your public key from EmailJS
-      );
-
-      alert('Email sent successfully!');
-      setName('');
-      setResponse(null);
-    } catch (error) {
-      console.error('Error sending email:', error);
-      alert('Failed to send the email. Please try again.');
+    // Validate number of guests if the response is "Yes"
+    if (response === 'Yes' && numberOfGuests < 1) {
+      return alert('Please enter a valid number of guests.');
     }
+
+    // Pass the data to the parent component
+    onRSVPSubmit({ name, response, numberOfGuests });
+
+    // Clear the form
+    setName('');
+    setResponse(null);
+    setNumberOfGuests(1); // Reset to default
   };
 
   return (
@@ -76,31 +68,51 @@ export default function RSVPSection() {
               }}
             />
             <div className="flex justify-center space-x-4">
-              <motion.button
-                type="button"
-                className={`px-6 py-2 rounded-md text-base font-semibold transition duration-300 ${
-                  response === 'Yes'
-                    ? 'bg-green-500 shadow-lg text-white'
-                    : 'bg-white bg-opacity-80 text-gray-900 hover:bg-opacity-100'
-                }`}
-                onClick={() => setResponse('Yes')}
-                whileHover={{ scale: 1.1 }}
-              >
-                Yes
-              </motion.button>
-              <motion.button
-                type="button"
-                className={`px-6 py-2 rounded-md text-base font-semibold transition duration-300 ${
-                  response === 'No'
-                    ? 'bg-red-500 shadow-lg text-white'
-                    : 'bg-white bg-opacity-80 text-gray-900 hover:bg-opacity-100'
-                }`}
-                onClick={() => setResponse('No')}
-                whileHover={{ scale: 1.1 }}
-              >
-                No
-              </motion.button>
+              <label className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  name="response"
+                  value="Yes"
+                  checked={response === 'Yes'}
+                  onChange={() => setResponse('Yes')}
+                  className="form-radio h-5 w-5 text-green-500"
+                />
+                <span className="text-gray-900">Yes</span>
+              </label>
+              <label className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  name="response"
+                  value="No"
+                  checked={response === 'No'}
+                  onChange={() => setResponse('No')}
+                  className="form-radio h-5 w-5 text-red-500"
+                />
+                <span className="text-gray-900">No</span>
+              </label>
             </div>
+
+            {/* Number of Guests Input (only shown if response is "Yes") */}
+            {response === 'Yes' && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="w-full"
+              >
+                <label className="block text-gray-900 text-sm font-medium mb-1">
+                  Number of Guests
+                </label>
+                <input
+                  type="number"
+                  min="1"
+                  value={numberOfGuests}
+                  onChange={(e) => setNumberOfGuests(Math.max(1, e.target.value))} // Ensure minimum value is 1
+                  className="w-full px-4 py-2 text-gray-900 text-base rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+              </motion.div>
+            )}
 
             {response && (
               <motion.button
@@ -109,7 +121,7 @@ export default function RSVPSection() {
                 className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold text-base transition hover:bg-blue-700 shadow-md"
                 whileHover={{ scale: 1.05 }}
               >
-                Submit
+                Submit RSVP
               </motion.button>
             )}
           </form>
