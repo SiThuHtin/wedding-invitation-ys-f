@@ -35,7 +35,7 @@ export default function Home() {
   </div>
 
   {/* Right Section - Image */}
-  <div className="w-full md:w-1/2 h-[40vh] md:h-full flex-none">
+  <div className="w-full md:w-1/2 h-[60vh] md:h-full flex-none">
     <Image
       src={HeroImage}
       alt="Wedding Rings"
