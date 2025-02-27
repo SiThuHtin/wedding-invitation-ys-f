@@ -16,7 +16,7 @@ const WeddingSection = ({ onSubmit }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-[#ffffff]">
+    <div className="flex flex-col md:flex-row md:h-screen min-h-screen bg-[#ffffff]">
       {/* Upper photo section (50% on mobile, 50% width on desktop/tablet) */}
       <div className="h-1/2 md:h-full md:w-1/2 w-full overflow-hidden md:pl-9">
         <Image

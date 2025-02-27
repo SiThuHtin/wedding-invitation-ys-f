@@ -52,7 +52,7 @@ export default function RSVPSection({ onRSVPSubmit }) {
         <Image
           src={Attending}
           alt="Wedding Rings"
-          className="w-full h-full object-contain md:object-cover"
+          className="w-full h-full object-contain"
           priority
         />
       </div>
