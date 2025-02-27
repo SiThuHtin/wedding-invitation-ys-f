@@ -31,7 +31,7 @@ export default function Home() {
       <br />
       It is when an imperfect couple learns to enjoy their differences"
     </p>
-    <div className="py-3 font-light italic text-center">-Dave Meurer</div>
+    <div className="py-3 font-normal italic text-center">-Dave Meurer</div>
   </div>
 
   {/* Right Section - Image */}
@@ -54,25 +54,25 @@ export default function Home() {
           </div>
 
           <div className="md:w-1/2 space-y-4 mt-6 md:mt-0">
-            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-md md:text-lg flex justify-between">
               <span>5:00 PM</span> <span>INVITE START TIME</span>
             </div>
-            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-md md:text-lg flex justify-between">
               <span>5:30 PM</span> <span>SIGNING CEREMONY BEGINS</span>
             </div>
-            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-md md:text-lg flex justify-between">
               <span>6:00 PM</span> <span>PINT O'CLOCK</span>
             </div>
-            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-md md:text-lg flex justify-between">
               <span>6:45 PM</span> <span>WELCOME TO THE NEWLYWED</span>
             </div>
-            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-md md:text-lg flex justify-between">
               <span>7:30 PM</span> <span>BUFFET OPENS</span>
             </div>
-            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-md md:text-lg flex justify-between">
               <span>8:00 PM</span> <span>PARTY TIME</span>
             </div>
-            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-lg flex justify-between">
+            <div className="border-t border-[#3F4A37] pt-3 text-[#3F4A37] text-md md:text-lg flex justify-between">
               <span>9:00 PM</span> <span>RECEPTION ENDS</span>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function Home() {
             />
           </div>
 
-          <h2 className="text-center text-2xl font-satisfy tracking-widest font-bold my-4">
+          <h2 className="text-center text-black text-2xl font-satisfy tracking-widest font-bold my-4">
             Love is like a movie,a journey of heartbeats & timeless memories
           </h2>
 
