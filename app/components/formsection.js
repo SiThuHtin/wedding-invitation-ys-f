@@ -7,7 +7,7 @@ import Attending from '../../public/attending.jpeg'; // Replace with your actual
 export default function RSVPSection({ onRSVPSubmit }) {
   const [name, setName] = useState('');
   const [response, setResponse] = useState(null);
-  const [numberOfGuests, setNumberOfGuests] = useState(1); // Default to 1 guest
+  const [numberOfGuests, setNumberOfGuests] = useState(''); // Default to 1 guest
 
   const handleSubmit = async () => {
     if (!response || !name) {
@@ -15,9 +15,7 @@ export default function RSVPSection({ onRSVPSubmit }) {
     }
 
     // Validate number of guests if the response is "Yes"
-    if (response === 'Yes' && numberOfGuests < 1) {
-      return alert('Please enter a valid number of guests.');
-    }
+  
 
     // Pass the data to the parent component
     onRSVPSubmit({ name, response, numberOfGuests });
@@ -25,7 +23,7 @@ export default function RSVPSection({ onRSVPSubmit }) {
     // Clear the form
     setName('');
     setResponse(null);
-    setNumberOfGuests(1); // Reset to default
+    setNumberOfGuests(''); // Reset to default
   };
 
   return (
@@ -104,10 +102,10 @@ export default function RSVPSection({ onRSVPSubmit }) {
                   Number of Guests
                 </label>
                 <input
-                  type="number"
-                  min="1"
+                  
+                  
                   value={numberOfGuests}
-                  onChange={(e) => setNumberOfGuests(Math.max(1, e.target.value))} // Ensure minimum value is 1
+                  onChange={(e) => setNumberOfGuests(e.target.value)} // Ensure minimum value is 1
                   className="w-full px-4 py-2 text-gray-900 text-base rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 />

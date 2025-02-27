@@ -22,7 +22,7 @@ const GallerySection = () => {
       </div>
 
       <h2 className="text-center text-black text-2xl font-satisfy tracking-widest font-bold my-4">
-        Love is like a movie,a journey of heartbeats & timeless memories
+        Love is like a movie,<br/>a journey of heartbeats <br/>& timeless memories
       </h2>
 
       <div className="grid grid-cols-3 gap-4">
