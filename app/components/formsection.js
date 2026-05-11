@@ -1,8 +1,8 @@
 'use client';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Attending from '../../public/attending.jpeg'; // Replace with your actual image path
+import Attending from '../../public/attending.jpeg';
 
 export default function RSVPSection({ onRSVPSubmit }) {
   const [name, setName] = useState('');
@@ -15,135 +15,125 @@ export default function RSVPSection({ onRSVPSubmit }) {
         e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 100);
     };
-
     const inputs = document.querySelectorAll('input, textarea');
     inputs.forEach((input) => {
       input.addEventListener('focus', handleFocus);
     });
-
     return () => {
       inputs.forEach((input) => {
         input.removeEventListener('focus', handleFocus);
       });
     };
-  }, []);// Default to 1 guest
+  }, []);
 
   const handleSubmit = async () => {
     if (!response || !name) {
-      return alert('Please provide your name and select Yes or No.');
+      return alert('Please provide your name and select Joyfully Accept or Regretfully Decline.');
     }
-
-    // Validate number of guests if the response is "Yes"
-  
-
-    // Pass the data to the parent component
     onRSVPSubmit({ name, response, numberOfGuests });
-
-    // Clear the form
     setName('');
     setResponse(null);
-    setNumberOfGuests(''); // Reset to default
+    setNumberOfGuests('');
   };
 
   return (
-    <div className="md:h-screen min-h-screen w-full flex flex-col md:flex-row bg-[#F5F5DC]">
-      {/* Image Section */}
-      <div className="md:w-1/2 w-full h-1/2 md:h-full bg-gray-200">
+    <div className="relative md:h-screen min-h-screen w-full flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
         <Image
           src={Attending}
           alt="Wedding Rings"
-          className="w-full h-full object-contain"
+          fill
+          className="object-cover"
           priority
         />
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
       </div>
 
       {/* Form Section */}
-      <div className="md:w-1/2 w-full h-1/2 md:h-full  flex flex-col justify-center items-center p-4">
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center w-full max-w-xs"
-        >
-          <h1 className="text-2xl md:text-4xl font-bold mb-4 text-gray-900">
-            Will you be attending?
-          </h1>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="w-full space-y-4 flex-grow"
-          >
-            <motion.input
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 w-full max-w-md p-6 sm:p-8 m-4 glass-panel rounded-3xl shadow-2xl"
+      >
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-satisfy mb-6 text-white text-center drop-shadow-md">
+          Will you be attending?
+        </h1>
+        <form onSubmit={(e) => e.preventDefault()} className="w-full space-y-6">
+          <motion.div>
+            <input
               type="text"
               placeholder="Enter your name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-2 text-gray-900 text-base rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-5 py-4 bg-white/20 backdrop-blur-md text-white placeholder-white/70 font-montserrat text-base rounded-2xl border border-white/40 focus:outline-none focus:ring-2 focus:ring-champagne transition-all shadow-inner"
               required
-              whileHover={{
-                x: [0, -3, 3, -3, 3, 0],
-                transition: { duration: 0.3 },
-              }}
             />
-            <div className="flex justify-center space-x-4">
-              <label className="flex items-center space-x-2">
-                <input
-                  type="radio"
-                  name="response"
-                  value="Yes"
-                  checked={response === 'Yes'}
-                  onChange={() => setResponse('Yes')}
-                  className="form-radio h-5 w-5 text-green-500"
-                />
-                <span className="text-gray-900">Yes</span>
-              </label>
-              <label className="flex items-center space-x-2">
-                <input
-                  type="radio"
-                  name="response"
-                  value="No"
-                  checked={response === 'No'}
-                  onChange={() => setResponse('No')}
-                  className="form-radio h-5 w-5 text-red-500"
-                />
-                <span className="text-gray-900">No</span>
-              </label>
-            </div>
+          </motion.div>
+          <div className="flex flex-col sm:flex-row sm:space-y-0 sm:space-x-6 space-y-4 font-montserrat text-white text-base md:text-lg">
+            <label className="flex items-center space-x-3 cursor-pointer group">
+              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${response === 'Yes' ? 'border-champagne bg-champagne/20' : 'border-white/70'}`}>
+                 {response === 'Yes' && <div className="w-3 h-3 rounded-full bg-champagne"></div>}
+              </div>
+              <input
+                type="radio"
+                name="response"
+                value="Yes"
+                checked={response === 'Yes'}
+                onChange={() => setResponse('Yes')}
+                className="hidden"
+              />
+              <span className="group-hover:text-champagne transition-colors">Joyfully Accept</span>
+            </label>
+            <label className="flex items-center space-x-3 cursor-pointer group">
+              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${response === 'No' ? 'border-champagne bg-champagne/20' : 'border-white/70'}`}>
+                 {response === 'No' && <div className="w-3 h-3 rounded-full bg-champagne"></div>}
+              </div>
+              <input
+                type="radio"
+                name="response"
+                value="No"
+                checked={response === 'No'}
+                onChange={() => setResponse('No')}
+                className="hidden"
+              />
+              <span className="group-hover:text-champagne transition-colors">Regretfully Decline</span>
+            </label>
+          </div>
 
-            {/* Number of Guests Input (only shown if response is "Yes") */}
-            {response === 'Yes' && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                className="w-full"
-              >
-                <label className="block text-gray-900 text-sm font-medium mb-1">
-                  Number of Guests
-                </label>
-                <input
-                  
-                  
-                  value={numberOfGuests}
-                  onChange={(e) => setNumberOfGuests(e.target.value)} // Ensure minimum value is 1
-                  className="w-full px-4 py-2 text-gray-900 text-base rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                />
-              </motion.div>
-            )}
+          {response === 'Yes' && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              transition={{ duration: 0.3 }}
+            >
+              <input
+                type="number"
+                placeholder="Number of Guests"
+                value={numberOfGuests}
+                onChange={(e) => setNumberOfGuests(e.target.value)}
+                min="1"
+                className="w-full px-5 py-4 bg-white/20 backdrop-blur-md text-white placeholder-white/70 font-montserrat text-base rounded-2xl border border-white/40 focus:outline-none focus:ring-2 focus:ring-champagne transition-all shadow-inner"
+                required
+              />
+            </motion.div>
+          )}
 
-            {response && (
-              <motion.button
-                type="button"
-                onClick={handleSubmit}
-                className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold text-base transition hover:bg-blue-700 shadow-md"
-                whileHover={{ scale: 1.05 }}
-              >
-                Submit RSVP
-              </motion.button>
-            )}
-          </form>
-        </motion.div>
-      </div>
+          {response && (
+            <motion.button
+              type="button"
+              onClick={handleSubmit}
+              className="w-full px-5 py-4 mt-4 bg-champagne text-white rounded-2xl font-montserrat tracking-widest font-semibold text-lg transition hover:bg-[#b5952f] shadow-lg"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              SEND RSVP
+            </motion.button>
+          )}
+        </form>
+      </motion.div>
     </div>
   );
 }

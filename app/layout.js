@@ -1,4 +1,4 @@
-import { Parisienne,Great_Vibes,Pacifico,Satisfy} from "next/font/google";
+import { Parisienne, Great_Vibes, Pacifico, Satisfy, Montserrat, Playfair_Display } from "next/font/google";
 
 import "./globals.css";
 
@@ -36,7 +36,15 @@ const greatVibes = Great_Vibes({
   subsets: ["latin"],
 });
 
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+});
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+});
 
 
 export const metadata = {
@@ -48,7 +56,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={` ${satisfy.variable}${pacifico.variable}${parisienne.variable} ${greatVibes.variable}  antialiased`}
+        suppressHydrationWarning
+        className={`${satisfy.variable} ${pacifico.variable} ${parisienne.variable} ${greatVibes.variable} ${montserrat.variable} ${playfair.variable} antialiased mesh-bg smooth-scroll`}
       >
         {children}
       </body>

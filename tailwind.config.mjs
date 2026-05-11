@@ -12,9 +12,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        beige: '#f8f4f0', // background color
+        beige: '#fcfcfc', 
         brown: '#5e2b1c', 
-        olive: '#45581f'
+        olive: '#45581f',
+        champagne: '#d4af37',
+        charcoal: '#2d3436',
+        cream: '#f8f4f0',
       },
       fontFamily: {
         pacifico: ['var(--font-pacifico)', 'cursive'],
@@ -22,7 +25,8 @@ export default {
         greatvibes: "var(--font-great-vibes)",
         parisienne: "var(--font-parisienne)",
         satisfy:"var(--font-satisfy)",
-        playfairdisplay: "var(--font-playfair-display)",
+        playfair: "var(--font-playfair)",
+        montserrat: "var(--font-montserrat)",
       },
     },
   },
