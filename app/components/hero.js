@@ -17,7 +17,7 @@ const HeroSection = () => {
                     className="object-cover scale-105"
                 />
                 {/* Sophisticated Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-[#2d3436]"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-charcoal"></div>
             </div>
 
             {/* Glowing Orbs behind the card for extra depth */}
@@ -50,7 +50,7 @@ const HeroSection = () => {
                     initial={{ scale: 0.9, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.7, duration: 1 }}
-                    className="text-5xl sm:text-6xl md:text-8xl font-satisfy mb-6 md:mb-10 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] via-[#f3e5ab] to-[#d4af37] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+                    className="text-5xl sm:text-6xl md:text-8xl font-satisfy mb-6 md:mb-10 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-champagne via-champagne-light to-champagne drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
                 >
                     Shun & Ye
                 </motion.div>

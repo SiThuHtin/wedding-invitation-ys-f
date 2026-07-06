@@ -125,7 +125,7 @@ export default function RSVPSection({ onRSVPSubmit }) {
             <motion.button
               type="button"
               onClick={handleSubmit}
-              className="w-full px-5 py-4 mt-4 bg-champagne text-white rounded-2xl font-montserrat tracking-widest font-semibold text-lg transition hover:bg-[#b5952f] shadow-lg"
+              className="w-full px-5 py-4 mt-4 bg-champagne text-white rounded-2xl font-montserrat tracking-widest font-semibold text-lg transition hover:bg-champagne-dark shadow-lg"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

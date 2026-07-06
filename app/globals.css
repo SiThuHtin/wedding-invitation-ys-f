@@ -1,22 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #f8f4f0;
-  --foreground: #2d3436;
-  --font-pacifico: 'Pacifico', cursive;
-  --font-parisienne: 'Parisienne', cursive;
-  --font-satisfy: 'Satisfy', cursive;
+  --background: #faf1ea;
+  --foreground: #45312e;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1a1a1a;
-    --foreground: #fcfcfc;
+    --background: #221715;
+    --foreground: #f8ece5;
   }
 }
 
@@ -45,11 +39,11 @@ main {
 
 /* Glassmorphism Utilities */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 246, 240, 0.4);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(69, 49, 46, 0.08);
 }
 
 .dark .glass-panel {
@@ -61,8 +55,8 @@ main {
 /* Premium Gradient Backgrounds */
 .mesh-bg {
   background-color: var(--background);
-  background-image: radial-gradient(at 0% 0%, hsla(43, 63%, 53%, 0.15) 0px, transparent 50%),
-                    radial-gradient(at 100% 100%, hsla(13, 54%, 24%, 0.1) 0px, transparent 50%);
+  background-image: radial-gradient(at 0% 0%, hsla(9, 58%, 82%, 0.25) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, hsla(7, 45%, 45%, 0.12) 0px, transparent 50%);
 }
 
 .heading-script {

@@ -1,37 +1,9 @@
-import { Parisienne, Great_Vibes, Pacifico, Satisfy, Montserrat, Playfair_Display } from "next/font/google";
+import { Satisfy, Montserrat, Playfair_Display } from "next/font/google";
 
 import "./globals.css";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
-
-const satisfy
-  = Satisfy({
-    variable: "--font-satisfy",
-    weight: "400",
-    subsets: ["latin"],
-  });
-const pacifico = Pacifico({
-  variable: "--font-pacifico",
-  weight: "400",
-  subsets: ["latin"],
-});
-const parisienne = Parisienne({
-  variable: "--font-parisienne",
-  weight: "400",
-  subsets: ["latin"],
-});
-
-const greatVibes = Great_Vibes({
-  variable: "--font-great-vibes",
+const satisfy = Satisfy({
+  variable: "--font-satisfy",
   weight: "400",
   subsets: ["latin"],
 });
@@ -57,7 +29,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         suppressHydrationWarning
-        className={`${satisfy.variable} ${pacifico.variable} ${parisienne.variable} ${greatVibes.variable} ${montserrat.variable} ${playfair.variable} antialiased mesh-bg smooth-scroll`}
+        className={`${satisfy.variable} ${montserrat.variable} ${playfair.variable} antialiased mesh-bg smooth-scroll`}
       >
         {children}
       </body>
